@@ -1,0 +1,120 @@
+.architecture {
+  position: relative;
+  z-index: 5;
+}
+
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arch-layer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.arch-layer.split {
+  justify-content: center;
+}
+
+.arch-layer.triple {
+  justify-content: center;
+}
+
+.arch-node {
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  flex: 1;
+  max-width: 280px;
+  border-top: 3px solid transparent;
+  transition: transform 0.3s ease;
+}
+
+.arch-node:hover {
+  transform: translateY(-5px);
+}
+
+.arch-node.primary {
+  border-top-color: var(--accent-primary);
+  max-width: 500px;
+}
+
+.arch-node.network {
+  border-top-color: #f59e0b;
+  max-width: 400px;
+}
+
+.arch-node.secondary {
+  border-top-color: #10b981;
+}
+
+.arch-node.database {
+  border-top-color: #ef4444;
+}
+
+.arch-node.processing {
+  border-top-color: var(--accent-secondary);
+}
+
+.arch-node.recommendation {
+  border-top-color: #06b6d4;
+}
+
+.arch-node.storage {
+  border-top-color: #0ea5e9;
+}
+
+.arch-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.arch-node h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.arch-node p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.arch-connector {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0;
+  opacity: 0.6;
+  animation: connectorPulse 2s infinite;
+}
+
+@keyframes connectorPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .arch-layer.split,
+  .arch-layer.triple {
+    flex-direction: column;
+    align-items: center;
+  }
+  .arch-node {
+    max-width: 100%;
+  }
+}
