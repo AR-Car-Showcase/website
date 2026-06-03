@@ -45,8 +45,29 @@
 }
 
 @media (max-width: 768px) {
+  .carousel-container {
+    padding: 1rem 0 2.5rem 0;
+  }
+
+  .screenshot-swiper {
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+
   .screenshot-slide {
-    width: 220px;
-    height: 480px;
+    width: 190px;
+    height: 405px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshot-slide {
+    width: 170px;
+    height: 360px;
   }
 }

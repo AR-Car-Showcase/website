@@ -86,3 +86,21 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .image-grid {
+    height: 320px;
+  }
+
+  .main-img {
+    max-width: 220px;
+  }
+
+  .features-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-feature {
+    padding: 1.25rem;
+  }
+}

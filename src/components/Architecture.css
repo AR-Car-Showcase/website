@@ -109,12 +109,31 @@
 }
 
 @media (max-width: 768px) {
+  .arch-diagram {
+    margin-top: 2rem;
+  }
+
   .arch-layer.split,
   .arch-layer.triple {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   .arch-node {
     max-width: 100%;
+    width: 100%;
+    padding: 1.25rem 1rem;
+  }
+
+  .arch-node h3 {
+    font-size: 1rem;
+  }
+
+  .arch-node p {
+    font-size: 0.82rem;
+  }
+
+  .arch-connector {
+    margin: 0.5rem 0;
   }
 }

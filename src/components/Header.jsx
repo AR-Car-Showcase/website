@@ -13,6 +13,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState('dark');
   const [showThemeMenu, setShowThemeMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,17 @@ const Header = () => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <header className={`header ${scrolled ? 'scrolled glass' : ''}`}>
       <div className="container header-content">
@@ -33,13 +45,26 @@ const Header = () => {
           <img src="/assets/icons/logo.png" alt="ARCS Logo" className="logo-img" />
           <span className="logo-text">ARCS</span>
         </a>
+
+        <button
+          className="mobile-nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         
-        <nav className="nav-links">
+        <nav className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
           <a href="#features">Features</a>
           <a href="#ar-showcase">AR</a>
           <a href="#studio">3D Studio</a>
           <a href="#architecture">Architecture</a>
           <a href="#techstack">Tech</a>
+          <a href="#get-started" className="nav-mobile-cta">Get Started</a>
         </nav>
         
         <div className="header-actions">

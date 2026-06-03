@@ -69,9 +69,14 @@
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+    gap: 2rem;
   }
   .footer-links-group {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .footer {
+    padding: 3rem 0 1.5rem 0;
   }
 }

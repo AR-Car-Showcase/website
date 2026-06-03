@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { lazy, Suspense } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
-import ARShowcase from './components/ARShowcase'
-import StudioShowcase from './components/StudioShowcase'
-import Screenshots from './components/Screenshots'
-import Architecture from './components/Architecture'
-import TechStack from './components/TechStack'
-import GetStarted from './components/GetStarted'
-import Footer from './components/Footer'
+
+const ARShowcase = lazy(() => import('./components/ARShowcase'))
+const StudioShowcase = lazy(() => import('./components/StudioShowcase'))
+const Screenshots = lazy(() => import('./components/Screenshots'))
+const Architecture = lazy(() => import('./components/Architecture'))
+const TechStack = lazy(() => import('./components/TechStack'))
+const GetStarted = lazy(() => import('./components/GetStarted'))
+const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
   return (
@@ -17,16 +18,22 @@ function App() {
       <main>
         <Hero />
         <Features />
-        <ARShowcase />
-        <StudioShowcase />
-        <Screenshots />
-        <Architecture />
-        <TechStack />
-        <GetStarted />
+        <Suspense fallback={<SectionFallback />}>
+          <ARShowcase />
+          <StudioShowcase />
+          <Screenshots />
+          <Architecture />
+          <TechStack />
+          <GetStarted />
+          <Footer />
+        </Suspense>
       </main>
-      <Footer />
     </>
   )
 }
 
 export default App
+
+function SectionFallback() {
+  return <div style={{ minHeight: '8rem' }} aria-hidden="true" />
+}

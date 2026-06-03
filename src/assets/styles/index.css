@@ -203,3 +203,29 @@ ul {
     gap: 3rem;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.1rem;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn {
+    width: auto;
+    min-height: 44px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}

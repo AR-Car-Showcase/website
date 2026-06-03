@@ -71,5 +71,16 @@
 @media (max-width: 768px) {
   .tech-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tech-categories {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .tech-category {
+    padding: 1.5rem 1.25rem;
   }
 }

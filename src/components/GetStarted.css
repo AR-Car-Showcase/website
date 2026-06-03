@@ -83,4 +83,8 @@
   .cta-card {
     padding: 3rem 1.5rem;
   }
+
+  .repo-links {
+    gap: 1rem;
+  }
 }
